@@ -80,6 +80,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Lisboa Roleplay" },
       { name: "description", content: "Lisboa Roleplay — servidor MTA português" },
       { property: "og:type", content: "website" },
+      { property: "og:title", content: "Lisboa Roleplay" },
+      { name: "twitter:title", content: "Lisboa Roleplay" },
+      { property: "og:description", content: "Lisboa Roleplay — servidor MTA português" },
+      { name: "twitter:description", content: "Lisboa Roleplay — servidor MTA português" },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/6882e762-672f-4716-b235-122b6a3918d3/id-preview-ccf363f3--6709bbc6-8f0c-48fe-812c-9b6360298d36.lovable.app-1780265010536.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/6882e762-672f-4716-b235-122b6a3918d3/id-preview-ccf363f3--6709bbc6-8f0c-48fe-812c-9b6360298d36.lovable.app-1780265010536.png" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
