@@ -1,22 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/lisboa-logo.png";
 import { AboutTab } from "@/components/tabs/AboutTab";
 import { ShopTab } from "@/components/tabs/ShopTab";
 import { TermsTab } from "@/components/tabs/TermsTab";
-
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Lisboa Roleplay — Servidor MTA Português" },
-      { name: "description", content: "Lisboa Roleplay — servidor MTA português com loja VIP, organizações e uma comunidade ativa. Vive Lisboa como nunca antes." },
-      { property: "og:title", content: "Lisboa Roleplay — Servidor MTA Português" },
-      { property: "og:description", content: "Junta-te ao Lisboa Roleplay, o servidor MTA português com VIPs, coins e organizações." },
-    ],
-  }),
-  component: Index,
-});
 
 const tabs = [
   { id: "about", label: "Sobre Nós" },
@@ -26,12 +13,11 @@ const tabs = [
 
 type TabId = (typeof tabs)[number]["id"];
 
-function Index() {
+export default function App() {
   const [active, setActive] = useState<TabId>("about");
 
   return (
     <div className="relative min-h-screen overflow-x-hidden">
-      {/* Ambient sparkles */}
       <div className="pointer-events-none fixed inset-0 z-0">
         {Array.from({ length: 30 }).map((_, i) => (
           <span
@@ -47,7 +33,6 @@ function Index() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-6xl px-4 py-10 sm:py-16">
-        {/* Header */}
         <motion.header
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -75,7 +60,6 @@ function Index() {
           </p>
         </motion.header>
 
-        {/* Tabs nav */}
         <nav className="mt-12 flex justify-center">
           <div className="glass relative flex flex-wrap justify-center gap-1 rounded-full p-1.5">
             {tabs.map((t) => (
@@ -103,7 +87,6 @@ function Index() {
           </div>
         </nav>
 
-        {/* Tab content */}
         <main className="mt-10">
           <AnimatePresence mode="wait">
             <motion.div
